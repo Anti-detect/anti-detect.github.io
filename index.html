@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Multilogin Antidetect Browser Blog - SEO Guides and Use Cases">
-  <title>Multilogin Blog | Antidetect Browser SEO</title>
+  <meta charset="UTF-8">
+  <title>Multilogin SEO Network - Site Hub</title>
+  <meta name="description" content="Central dashboard of all SEO sites about Multilogin.">
   <link rel="icon" href="favicon.ico" />
+  <script src="data.js"></script>
   <style>
-    body { background: #121212; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 2rem; }
-    a { color: #00c6ff; text-decoration: none; }
-    h1, h2 { color: #00ffd9; }
-    .post { margin-bottom: 2rem; padding: 1rem; border: 1px solid #333; border-radius: 5px; background: #1e1e1e; }
-    .post:hover { border-color: #00ffd9; }
-    footer { margin-top: 4rem; font-size: 0.9rem; color: #aaa; text-align: center; }
+    body { background: #121212; color: #fff; font-family: Arial, sans-serif; padding: 2rem; }
+    h1 { color: #00e0ff; }
+    a { color: #00c6ff; }
+    input { padding: 0.5rem; width: 300px; margin-bottom: 1rem; }
+    ul { columns: 2; }
+    li { margin: 5px 0; }
   </style>
 </head>
 <body>
-  <h1>Multilogin Blog - Antidetect SEO Hub</h1>
-  <p>Discover tutorials, comparisons, and use cases around Multilogin and stealth browser techniques.</p>
+  <h1>🔗 Multilogin SEO Hub</h1>
+  <p>This is the central index for 100 SEO sites targeting Multilogin keywords.</p>
+  <input type="text" id="search" placeholder="Search site name..." oninput="filterSites()" />
+  <ul id="siteList"></ul>
 
-  <div class="post">
-    <h2><a href="posts/multilogin-vs-gologin.html">Multilogin vs GoLogin</a></h2>
-    <p>Which antidetect browser is better for account safety?</p>
-  </div>
-
-  <div class="post">
-    <h2><a href="posts/facebook-ads-antidetect.html">Run Facebook Ads Without Bans</a></h2>
-    <p>How to safely run ads without getting disabled by Meta.</p>
-  </div>
-
-  <div class="post">
-    <h2><a href="posts/run-multiple-accounts.html">Run Multiple Accounts Safely</a></h2>
-    <p>Multilogin helps you simulate real users with ease.</p>
-  </div>
-
-  <div class="post">
-    <h2><a href="posts/automation-with-multilogin.html">Automate Multilogin with API</a></h2>
-    <p>Use the power of API to scale your business faster.</p>
-  </div>
-
-  <div class="post">
-    <h2><a href="posts/proxy-setup-guide.html">Set Up Proxy in Multilogin</a></h2>
-    <p>Proper way to add residential or mobile proxy.</p>
-  </div>
-
-  <footer>
-    <p>Use coupon <strong>ADBNEW50</strong> for <a href="https://adblogin.com/multilogin/">50% off Multilogin</a></p>
-  </footer>
+  <script>
+    function filterSites() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const ul = document.getElementById('siteList');
+      ul.innerHTML = '';
+      sites.filter(s => s.includes(input)).forEach(slug => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="https://anti-detect.github.io/${slug}/" target="_blank">${slug.replace(/-/g, ' ')}</a>`;
+        ul.appendChild(li);
+      });
+    }
+    filterSites();
+  </script>
 </body>
 </html>
