@@ -1,9 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://anti-detect.github.io/</loc></url>
-<url><loc>https://anti-detect.github.io/posts/multilogin-vs-gologin.html</loc></url>
-<url><loc>https://anti-detect.github.io/posts/facebook-ads-antidetect.html</loc></url>
-<url><loc>https://anti-detect.github.io/posts/run-multiple-accounts.html</loc></url>
-<url><loc>https://anti-detect.github.io/posts/automation-with-multilogin.html</loc></url>
-<url><loc>https://anti-detect.github.io/posts/proxy-setup-guide.html</loc></url>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://anti-detect.github.io/posts/en/tutorials/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/tutorials/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/tutorials/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/comparisons/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/comparisons/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/comparisons/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/proxy-guides/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/proxy-guides/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/proxy-guides/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/discounts/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/discounts/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/discounts/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/affiliate/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/affiliate/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/en/affiliate/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/tutorials/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/tutorials/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/tutorials/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/comparisons/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/comparisons/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/comparisons/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/proxy-guides/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/proxy-guides/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/proxy-guides/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/discounts/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/discounts/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/discounts/post-2.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/affiliate/post-0.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/affiliate/post-1.html</loc></url>
+<url><loc>https://anti-detect.github.io/posts/vi/affiliate/post-2.html</loc></url>
 </urlset>
