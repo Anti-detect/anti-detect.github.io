@@ -2,37 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Multilogin SEO Network - Site Hub</title>
-  <meta name="description" content="Central dashboard of all SEO sites about Multilogin.">
-  <link rel="icon" href="favicon.ico" />
-  <script src="data.js"></script>
+  <title>Multilogin Global SEO Hub - Level 3</title>
+  <meta name="description" content="Explore Multilogin tutorials, discounts, proxy tips and more. Now in English & Vietnamese.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { background: #121212; color: #fff; font-family: Arial, sans-serif; padding: 2rem; }
-    h1 { color: #00e0ff; }
+    body { background: #0e0e0e; color: #fff; font-family: sans-serif; padding: 2rem; }
+    h1, h2 { color: #00e0ff; }
     a { color: #00c6ff; }
-    input { padding: 0.5rem; width: 300px; margin-bottom: 1rem; }
-    ul { columns: 2; }
+    .lang { margin-bottom: 2rem; }
+    .category { margin-bottom: 2rem; }
+    ul { list-style: none; padding-left: 0; }
     li { margin: 5px 0; }
+    .lang-toggle button { margin-right: 10px; padding: 5px 10px; }
   </style>
+  <script>
+    function showLang(lang) {
+      document.querySelectorAll('.category').forEach(c => c.style.display = 'none');
+      document.querySelectorAll('.cat-' + lang).forEach(c => c.style.display = 'block');
+    }
+  </script>
 </head>
 <body>
-  <h1>🔗 Multilogin SEO Hub</h1>
-  <p>This is the central index for 100 SEO sites targeting Multilogin keywords.</p>
-  <input type="text" id="search" placeholder="Search site name..." oninput="filterSites()" />
-  <ul id="siteList"></ul>
+  <h1>🌐 Multilogin SEO Hub – Level 3</h1>
+  <p>This hub contains categorized SEO content in multiple languages. Select your language:</p>
 
-  <script>
-    function filterSites() {
-      const input = document.getElementById('search').value.toLowerCase();
-      const ul = document.getElementById('siteList');
-      ul.innerHTML = '';
-      sites.filter(s => s.includes(input)).forEach(slug => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="https://anti-detect.github.io/${slug}/" target="_blank">${slug.replace(/-/g, ' ')}</a>`;
-        ul.appendChild(li);
-      });
-    }
-    filterSites();
-  </script>
-</body>
-</html>
+  <div class="lang-toggle">
+    <button onclick="showLang('en')">English</button>
+    <button onclick="showLang('vi')">Tiếng Việt</button>
+  </div>
+<div class="category cat-en" style="display: none;">
+<h2>Tutorials (English)</h2>
+<ul>
+<li><a href="posts/en/tutorials/how-to-use-multilogin.html">How to use Multilogin</a></li>
+<li><a href="posts/en/tutorials/multilogin-setup-for-beginners.html">Multilogin setup for beginners</a></li>
+<li><a href="posts/en/tutorials/creating-profiles-with-proxies.html">Creating profiles with proxies</a></li>
+</ul>
+</div>
+<div class="category cat-en" style="display: none;">
+<h2>Comparisons (English)</h2>
+<ul>
+<li><a href="posts/en/comparisons/multilogin-vs-gologin.html">Multilogin vs GoLogin</a></li>
+<li><a href="posts/en/comparisons/multilogin-vs-adspower.html">Multilogin vs AdsPower</a></li>
+<li><a href="posts/en/comparisons/why-multilogin-is-better-than-incogniton.html">Why Multilogin is better than Incogniton</a></li>
+</ul>
+</div>
+<div class="category cat-en" style="display: none;">
+<h2>Proxy Guides (English)</h2>
+<ul>
+<li><a href="posts/en/proxy-guides/how-to-choose-the-best-proxy.html">How to choose the best proxy</a></li>
+<li><a href="posts/en/proxy-guides/integrating-proxy-in-multilogin.html">Integrating proxy in Multilogin</a></li>
+<li><a href="posts/en/proxy-guides/mobile-proxy-vs-datacenter-proxy.html">Mobile proxy vs datacenter proxy</a></li>
+</ul>
+</div>
+<div class="category cat-en" style="display: none;">
+<h2>Discounts (English)</h2>
+<ul>
+<li><a href="posts/en/discounts/how-to-get-multilogin-discounts.html">How to get Multilogin discounts</a></li>
+<li><a href="posts/en/discounts/where-to-find-free-trial.html">Where to find free trial</a></li>
+<li><a href="posts/en/discounts/special-deal-for-2025.html">Special deal for 2025</a></li>
+</ul>
+</div>
+<div class="category cat-en" style="display: none;">
+<h2>Affiliate (English)</h2>
+<ul>
+<li><a href="posts/en/affiliate/join-the-multilogin-affiliate-program.html">Join the Multilogin affiliate program</a></li>
+<li><a href="posts/en/affiliate/earn-money-promoting-multilogin.html">Earn money promoting Multilogin</a></li>
+<li><a href="posts/en/affiliate/affiliate-tips--tracking.html">Affiliate tips & tracking</a></li>
+</ul>
+</div>
+<div class="category cat-vi" style="display: none;">
+<h2>Tutorials (Tiếng Việt)</h2>
+<ul>
+<li><a href="posts/vi/tutorials/how-to-use-multilogin.html">If way past plan your myself.</a></li>
+<li><a href="posts/vi/tutorials/multilogin-setup-for-beginners.html">Ask since across follow.</a></li>
+<li><a href="posts/vi/tutorials/creating-profiles-with-proxies.html">Memory try method.</a></li>
+</ul>
+</div>
+<div class="category cat-vi" style="display: none;">
+<h2>Comparisons (Tiếng Việt)</h2>
+<ul>
+<li><a href="posts/vi/comparisons/multilogin-vs-gologin.html">Myself Democrat too skill gun state coach both.</a></li>
+<li><a href="posts/vi/comparisons/multilogin-vs-adspower.html">Book far meeting member eight.</a></li>
+<li><a href="posts/vi/comparisons/why-multilogin-is-better-than-incogniton.html">Store event sound.</a></li>
+</ul>
+</div>
+<div class="category cat-vi" style="display: none;">
+<h2>Proxy Guides (Tiếng Việt)</h2>
+<ul>
+<li><a href="posts/vi/proxy-guides/how-to-choose-the-best-proxy.html">Out since worker alone feel serious necessary travel.</a></li>
+<li><a href="posts/vi/proxy-guides/integrating-proxy-in-multilogin.html">Successful happy soon other challenge.</a></li>
+<li><a href="posts/vi/proxy-guides/mobile-proxy-vs-datacenter-proxy.html">Anyone anyone public science assume well very.</a></li>
+</ul>
+</div>
+<div class="category cat-vi" style="display: none;">
+<h2>Discounts (Tiếng Việt)</h2>
+<ul>
+<li><a href="posts/vi/discounts/how-to-get-multilogin-discounts.html">Half one put stage around.</a></li>
+<li><a href="posts/vi/discounts/where-to-find-free-trial.html">Customer science administration really.</a></li>
+<li><a href="posts/vi/discounts/special-deal-for-2025.html">Value popular raise meeting itself.</a></li>
+</ul>
+</div>
+<div class="category cat-vi" style="display: none;">
+<h2>Affiliate (Tiếng Việt)</h2>
+<ul>
+<li><a href="posts/vi/affiliate/join-the-multilogin-affiliate-program.html">Start style eye size keep kind during.</a></li>
+<li><a href="posts/vi/affiliate/earn-money-promoting-multilogin.html">Speak success line language.</a></li>
+<li><a href="posts/vi/affiliate/affiliate-tips--tracking.html">Radio sister that goal manage keep.</a></li>
+</ul>
+</div>
+
+<script>showLang('en');</script>
+</body></html>
