@@ -6,3 +6,4 @@ url: "https://anti-detect.github.io"
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
