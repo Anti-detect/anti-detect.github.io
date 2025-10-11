@@ -7,3 +7,16 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+default_lang: en
+languages:
+  - en
+  - pt
+  - ru
+  - vi
+  - zh
+lang_names:
+  en: "English"
+  pt: "Português"
+  ru: "Русский"
+  vi: "Tiếng Việt"
+  zh: "中文 (中国)"

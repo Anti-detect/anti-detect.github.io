@@ -7,15 +7,39 @@
     <title>{{ page.title | default: site.title }}</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/css/main.css">
+    {%- assign current_lang = page.lang | default: site.default_lang -%}
     {%- if page.canonical -%}
-    <link rel="canonical" href="{{ page.canonical }}">
+      <link rel="canonical" href="{{ page.canonical }}">
     {%- else -%}
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+      <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     {%- endif -%}
+    <!-- hreflang alternate links -->
+    {% for l in site.languages %}
+      {% if l == site.default_lang %}
+        {% assign href = site.url | append: page.url %}
+      {% else %}
+        {% assign href = site.url | append: '/' | append: l | append: page.url %}
+      {% endif %}
+      <link rel="alternate" hreflang="{{ l }}" href="{{ href }}" />
+    {% endfor %}
   </head>
   <body>
     <header>
       <h1><a href="/">{{ site.title }}</a></h1>
+      <nav class="lang-switcher">
+        {% for l in site.languages %}
+          {% assign name = site.lang_names[l] %}
+          {% if l == page.lang or (page.lang == nil and l == site.default_lang) %}
+            <span class="active">{{ name }}</span>
+          {% else %}
+            {% if l == site.default_lang %}
+              <a href="/{{ page.url | remove_first: '/' }}">{{ name }}</a>
+            {% else %}
+              <a href="/{{ l }}{{ page.url }}">{{ name }}</a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </nav>
     </header>
     <main>
       {{ content }}
