@@ -11,13 +11,16 @@
   <header class="fixed-header">
     <div class="container">
       <a href="/" class="text-xl font-extrabold text-green-400">Anti-Detect Tools</a>
-      <nav>
-        <a href="/en/" class="active">English</a>
-        <a href="/vi/">Tiếng Việt</a>
-        <a href="/ru/">Русский</a>
-        <a href="/zh/">中文</a>
-        <a href="/pt/">Português</a>
-      </nav>
+        <nav aria-label="Breadcrumb" class="bg-slate-900 py-2 px-4">
+          <ol class="flex text-sm text-gray-400" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="/en/" itemprop="item" class="text-green-400 hover:underline">
+                <span itemprop="name">Home</span>
+              </a>
+              <meta itemprop="position" content="1">
+            </li>
+          </ol>
+        </nav>
     </div>
   </header>
   <main class="site-main container">
