@@ -35,7 +35,7 @@
         <a href="/en/about/">About</a>
       </nav>
       <!-- Language Switcher -->
-      <nav class="lang-switcher" style="margin-left:2rem;display:inline-block;">
+  <nav class="lang-switcher">
         {% assign langs = site.languages | default: "en,vi,ru,zh,pt" | split: "," %}
         {% assign lang_names = "English,Tiếng Việt,Русский,中文,Português" | split: "," %}
         {% assign cur_lang = page.lang | default: "en" %}
@@ -43,12 +43,12 @@
           {% assign idx = forloop.index0 %}
           {% assign name = lang_names[idx] %}
           {% if l == cur_lang %}
-            <span class="active" style="font-weight:bold;color:#16a34a;">{{ name }}</span>
+            <span class="active">{{ name }}</span>
           {% else %}
             {% if l == "en" %}
-              <a href="/en/" style="margin:0 0.5em;">{{ name }}</a>
+              <a href="/en/">{{ name }}</a>
             {% else %}
-              <a href="/{{ l }}/" style="margin:0 0.5em;">{{ name }}</a>
+              <a href="/{{ l }}/">{{ name }}</a>
             {% endif %}
           {% endif %}
         {% endfor %}
