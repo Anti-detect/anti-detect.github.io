@@ -24,39 +24,34 @@
     {% endfor %}
   </head>
   <body>
-    <header>
-      <h1><a href="/">{{ site.title }}</a></h1>
-      <nav class="lang-switcher">
-        {% assign cur = page.lang | default: site.default_lang %}
-        {% assign purl = page.url | default: '/' %}
-        {% if cur != site.default_lang %}
-          {% assign prefix = '/' | append: cur | append: '/' %}
-          {% if purl == prefix or purl == '/' | append: cur | append: '' %}
-            {% assign slug = '/' %}
-          {% else %}
-            {% assign slug = purl | remove_first: prefix %}
-            {% unless slug == '' %}
-              {% assign slug = '/' | append: slug %}
-            {% endunless %}
-          {% endif %}
-        {% else %}
-          {% assign slug = purl %}
-        {% endif %}
-
-        {% for l in site.languages %}
-          {% assign name = site.lang_names[l] %}
-          {% if l == cur %}
-            <span class="active">{{ name }}</span>
-          {% else %}
-            {% if l == site.default_lang %}
-              <a href="{{ slug }}">{{ name }}</a>
-            {% else %}
-              <a href="/{{ l }}{{ slug }}">{{ name }}</a>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
+  <!-- Fixed Header -->
+  <header style="position:sticky;top:0;z-index:1000;background:#222;color:#fff;padding:1rem 0;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-extrabold text-green-400">Anti-Detect Tools</a>
+      <nav>
+        <a href="/en/" class="mx-2 text-white hover:text-green-400">Home</a>
+        <a href="/en/tools/" class="mx-2 text-white hover:text-green-400">Tools</a>
+        <a href="/en/blog/" class="mx-2 text-white hover:text-green-400">Blog</a>
+        <a href="/en/about/" class="mx-2 text-white hover:text-green-400">About</a>
       </nav>
-    </header>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8" style="min-height:60vh;">
+    {{ content }}
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer style="position:sticky;bottom:0;z-index:1000;background:#222;color:#ccc;padding:2rem 0;text-align:center;">
+    <div class="container mx-auto px-4">
+      <p>&copy; 2025 Anti-Detect Tools. All rights reserved.</p>
+      <p style="font-size:0.9em;">Legal: No cracked software, no cheating, no spam. All tools comply with laws and platform terms.</p>
+      <nav>
+        <a href="/en/terms-of-service/" class="mx-2 text-green-400 hover:underline">Terms of Service</a>
+        <a href="/en/privacy-policy/" class="mx-2 text-green-400 hover:underline">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
     <main>
       {{ content }}
     </main>
