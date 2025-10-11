@@ -4,16 +4,24 @@ Read redirect-map.yml and generate simple HTML redirect pages (meta refresh) at 
 Run: python tools/generate_redirects.py
 """
 from pathlib import Path
-import yaml
-
 ROOT = Path(__file__).resolve().parents[1]
 map_file = ROOT / 'redirect-map.yml'
 if not map_file.exists():
     print('No redirect-map.yml found')
     raise SystemExit(1)
 
+# Simple parser: lines like '/old-path/: /new-path/' (ignore comments and blank lines)
+data = {}
 with open(map_file, 'r', encoding='utf-8') as f:
-    data = yaml.safe_load(f)
+    for raw in f:
+        line = raw.strip()
+        if not line or line.startswith('#'):
+            continue
+        if ':' in line:
+            parts = line.split(':', 1)
+            old = parts[0].strip()
+            new = parts[1].strip()
+            data[old] = new
 
 for old, new in data.items():
     # normalize paths
