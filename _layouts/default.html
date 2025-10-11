@@ -25,30 +25,30 @@
   </head>
   <body>
   <!-- Fixed Header -->
-  <header style="position:sticky;top:0;z-index:1000;background:#222;color:#fff;padding:1rem 0;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-    <div class="container mx-auto px-4 flex justify-between items-center">
+  <header class="fixed-header">
+    <div class="container">
       <a href="/" class="text-xl font-extrabold text-green-400">Anti-Detect Tools</a>
       <nav>
-        <a href="/en/" class="mx-2 text-white hover:text-green-400">Home</a>
-        <a href="/en/tools/" class="mx-2 text-white hover:text-green-400">Tools</a>
-        <a href="/en/blog/" class="mx-2 text-white hover:text-green-400">Blog</a>
-        <a href="/en/about/" class="mx-2 text-white hover:text-green-400">About</a>
+        <a href="/en/">Home</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/about/">About</a>
       </nav>
     </div>
   </header>
 
-  <main class="container mx-auto px-4 py-8" style="min-height:60vh;">
+  <main class="site-main container">
     {{ content }}
   </main>
 
   <!-- Fixed Footer -->
-  <footer style="position:sticky;bottom:0;z-index:1000;background:#222;color:#ccc;padding:2rem 0;text-align:center;">
-    <div class="container mx-auto px-4">
+  <footer class="fixed-footer">
+    <div class="container">
       <p>&copy; 2025 Anti-Detect Tools. All rights reserved.</p>
-      <p style="font-size:0.9em;">Legal: No cracked software, no cheating, no spam. All tools comply with laws and platform terms.</p>
+      <p class="legal">Legal: No cracked software, no cheating, no spam. All tools comply with laws and platform terms.</p>
       <nav>
-        <a href="/en/terms-of-service/" class="mx-2 text-green-400 hover:underline">Terms of Service</a>
-        <a href="/en/privacy-policy/" class="mx-2 text-green-400 hover:underline">Privacy Policy</a>
+        <a href="/en/terms-of-service/">Terms of Service</a>
+        <a href="/en/privacy-policy/">Privacy Policy</a>
       </nav>
     </div>
   </footer>

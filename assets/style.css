@@ -1,0 +1,58 @@
+/* Main site styles for Anti-Detect Tools */
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f8fafc;
+  color: #222;
+  margin: 0;
+}
+
+header.fixed-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #222;
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  margin: 0 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+header nav a:hover {
+  color: #16a34a;
+}
+
+main.site-main {
+  min-height: 60vh;
+  padding: 2rem 0;
+}
+
+footer.fixed-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+  background: #222;
+  color: #ccc;
+  padding: 2rem 0;
+  text-align: center;
+}
+footer nav a {
+  margin: 0 0.5rem;
+  color: #16a34a;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+footer nav a:hover {
+  color: #22d3ee;
+}
