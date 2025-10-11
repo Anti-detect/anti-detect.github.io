@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Multilogin coupons, tutorials and automation guides.">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    {%- if page.canonical -%}
+    <link rel="canonical" href="{{ page.canonical }}">
+    {%- else -%}
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    {%- endif -%}
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">{{ site.title }}</a></h1>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <footer>
+      <p>&copy; {{ "now" | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+  </body>
+</html>

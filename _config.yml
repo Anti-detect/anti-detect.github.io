@@ -1,0 +1,8 @@
+title: Multilogin Coupon & Guides
+email: ''
+description: 'Multilogin coupons, tutorials and automation guides.'
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://anti-detect.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
