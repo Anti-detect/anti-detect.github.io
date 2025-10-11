@@ -27,15 +27,31 @@
     <header>
       <h1><a href="/">{{ site.title }}</a></h1>
       <nav class="lang-switcher">
+        {% assign cur = page.lang | default: site.default_lang %}
+        {% assign purl = page.url | default: '/' %}
+        {% if cur != site.default_lang %}
+          {% assign prefix = '/' | append: cur | append: '/' %}
+          {% if purl == prefix or purl == '/' | append: cur | append: '' %}
+            {% assign slug = '/' %}
+          {% else %}
+            {% assign slug = purl | remove_first: prefix %}
+            {% unless slug == '' %}
+              {% assign slug = '/' | append: slug %}
+            {% endunless %}
+          {% endif %}
+        {% else %}
+          {% assign slug = purl %}
+        {% endif %}
+
         {% for l in site.languages %}
           {% assign name = site.lang_names[l] %}
-          {% if l == page.lang or (page.lang == nil and l == site.default_lang) %}
+          {% if l == cur %}
             <span class="active">{{ name }}</span>
           {% else %}
             {% if l == site.default_lang %}
-              <a href="/{{ page.url | remove_first: '/' }}">{{ name }}</a>
+              <a href="{{ slug }}">{{ name }}</a>
             {% else %}
-              <a href="/{{ l }}{{ page.url }}">{{ name }}</a>
+              <a href="/{{ l }}{{ slug }}">{{ name }}</a>
             {% endif %}
           {% endif %}
         {% endfor %}
