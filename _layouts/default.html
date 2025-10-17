@@ -11,16 +11,39 @@
     {% if page.description or site.description %}
       <meta name="description" content="{{ page.description | default: site.description }}">
     {% endif %}
+    
+    {%- comment -%} SEO Meta Tags {%- endcomment -%}
+    {% if page.keywords %}
+      <meta name="keywords" content="{{ page.keywords }}">
+    {% else %}
+      <meta name="keywords" content="anti-detect browser, multilogin, fingerprint protection, privacy, automation, account management, ADB, 2025">
+    {% endif %}
+    <meta name="author" content="{{ site.author | default: 'Anti-Detect Team' }}">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b74da">
+    <meta name="color-scheme" content="light dark">
 
     {%- comment -%} Social/Open Graph (page overrides allowed) {%- endcomment -%}
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
-    {% if page.og_image or site.og_image %}
-      <meta property="og:image" content="{{ page.og_image | default: site.og_image | relative_url }}">
+    {% if page.og_image %}
+      <meta property="og:image" content="{{ page.og_image | absolute_url }}">
+    {% elsif site.site_og_image %}
+      <meta property="og:image" content="{{ site.site_og_image | absolute_url }}">
     {% endif %}
     <meta property="og:description" content="{{ page.description | default: site.description }}">
     <meta property="og:url" content="{{ page.canonical | default: page.url | absolute_url }}">
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.og_title | default: page.title | default: site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    {% if page.og_image %}
+      <meta name="twitter:image" content="{{ page.og_image | absolute_url }}">
+    {% elsif site.site_og_image %}
+      <meta name="twitter:image" content="{{ site.site_og_image | absolute_url }}">
+    {% endif %}
 
     {%- comment -%} Canonical {%- endcomment -%}
     {% if page.canonical %}
@@ -52,15 +75,45 @@
           "@id": "{{ site.url | absolute_url }}#organization",
           "name": "{{ site.title | escape }}",
           "url": "{{ site.url | absolute_url }}",
-          "logo": "{{ '/assets/icons/favicon.svg' | relative_url }}"
+          "logo": "{{ site.site_og_image | default: '/assets/icons/favicon.svg' | absolute_url }}",
+          "description": "{{ site.description | escape }}",
+          "sameAs": [
+            "https://t.me/AntiDetectToolsGroup"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "{{ site.email }}"
+          }
         },
         {
           "@type": "WebSite",
           "name": "{{ site.title | escape }}",
           "url": "{{ site.url | absolute_url }}",
           "inLanguage": "{{ page.lang | default: site.default_lang }}",
-          "publisher": { "@id": "{{ site.url | absolute_url }}#organization" }
+          "publisher": { "@id": "{{ site.url | absolute_url }}#organization" },
+          "description": "{{ site.description | escape }}",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "{{ site.url | absolute_url }}?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         }
+        {% if page.layout == 'post' %},
+        {
+          "@type": "BlogPosting",
+          "headline": "{{ page.title | escape }}",
+          "description": "{{ page.description | escape }}",
+          "datePublished": "{{ page.date | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+          "url": "{{ page.url | absolute_url }}",
+          "author": {
+            "@type": "Organization",
+            "name": "{{ site.author | default: 'Anti-Detect Team' }}"
+          }
+        }
+        {% endif %}
       ]
     }
     </script>

@@ -154,3 +154,447 @@ a:hover { color: #38bdf8; }
 .coupon-legal hr {
 	margin: 1.5rem 0;
 }
+
+/* Enhanced Hero Section */
+.hero-subtitle {
+	font-size: 1.25rem;
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+}
+
+.hero-highlight {
+	font-size: 1.15rem;
+	background: rgba(255, 255, 255, 0.15);
+	padding: 1rem;
+	border-radius: 8px;
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+}
+
+.coupon-cta-primary {
+	background: #fbbf24;
+	color: #1e293b;
+}
+
+.coupon-cta-primary:hover {
+	background: #f59e0b;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+}
+
+.coupon-cta-large {
+	font-size: 1.3rem;
+	padding: 1.25em 2.5em;
+	margin: 2rem auto;
+	display: block;
+	max-width: 500px;
+}
+
+.coupon-code-badge {
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 0.5rem 1rem;
+	border-radius: 20px;
+	font-weight: 700;
+	margin: 0 0.5rem 0 0;
+}
+
+/* Quick Stats Section */
+.quick-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	padding: 3rem 1rem;
+	max-width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.stat {
+	background: #fff;
+	padding: 2rem 1rem;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+}
+
+.stat-number {
+	display: block;
+	font-size: 2rem;
+	font-weight: 800;
+	color: #0b74da;
+	margin-bottom: 0.5rem;
+}
+
+.stat-label {
+	display: block;
+	font-size: 0.95rem;
+	color: #64748b;
+}
+
+/* Features Grid */
+.coupon-features {
+	max-width: 1000px;
+	margin: 3rem auto 0 auto;
+	padding: 2rem 1rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+}
+
+.coupon-features h2 {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.feature-card {
+	background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+	padding: 1.5rem;
+	border-radius: 8px;
+	border-left: 4px solid #0b74da;
+}
+
+.feature-card h3 {
+	font-size: 1.1rem;
+	margin-bottom: 0.75rem;
+	color: #0b74da;
+}
+
+.feature-card p {
+	font-size: 0.95rem;
+	color: #475569;
+	line-height: 1.6;
+}
+
+/* Use Cases */
+.coupon-usecases {
+	max-width: 1000px;
+	margin: 2rem auto 0 auto;
+	padding: 2rem 1rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+}
+
+.coupon-usecases h2 {
+	font-size: 1.75rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.usecases-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+}
+
+.usecase {
+	background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+	padding: 1.5rem;
+	border-radius: 8px;
+	border-left: 4px solid #0ea5e9;
+}
+
+.usecase h3 {
+	font-size: 1rem;
+	margin-bottom: 0.75rem;
+	color: #0b74da;
+}
+
+.usecase p {
+	font-size: 0.95rem;
+	color: #475569;
+}
+
+/* Steps List */
+.steps-list {
+	max-width: 600px;
+	margin: 1.5rem auto;
+	background: #f8fafc;
+	padding: 1.5rem 2rem;
+	border-radius: 8px;
+	border-left: 4px solid #0b74da;
+}
+
+.steps-list li {
+	margin-bottom: 1.5rem;
+	line-height: 1.7;
+	font-size: 1.05rem;
+}
+
+/* Articles Grid */
+.featured-articles {
+	max-width: 1000px;
+	margin: 2rem auto 0 auto;
+	padding: 2rem 1rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+}
+
+.featured-articles h2 {
+	font-size: 1.75rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.articles-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.article-card {
+	background: linear-gradient(135deg, #fef3c7 0%, #fef08a 100%);
+	padding: 1.5rem;
+	border-radius: 8px;
+	border-left: 4px solid #f59e0b;
+}
+
+.article-card h3 {
+	margin-bottom: 0.75rem;
+}
+
+.article-card h3 a {
+	color: #0b74da;
+	text-decoration: none;
+	font-size: 1.05rem;
+}
+
+.article-card h3 a:hover {
+	text-decoration: underline;
+}
+
+.article-card p {
+	font-size: 0.95rem;
+	color: #475569;
+}
+
+/* FAQ Section */
+.coupon-faq {
+	max-width: 800px;
+	margin: 2rem auto 0 auto;
+	padding: 2rem 1rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+}
+
+.coupon-faq h2 {
+	font-size: 1.75rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.faq-container {
+	display: grid;
+	gap: 1rem;
+}
+
+.faq-item {
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	padding: 0;
+}
+
+.faq-item summary {
+	padding: 1.5rem;
+	cursor: pointer;
+	font-weight: 600;
+	color: #0b74da;
+	-webkit-user-select: none;
+	user-select: none;
+	display: flex;
+	align-items: center;
+}
+
+.faq-item summary:hover {
+	background: #eef2f7;
+}
+
+.faq-item summary::before {
+	content: '▶';
+	margin-right: 1rem;
+	transition: transform 0.2s;
+}
+
+.faq-item[open] summary::before {
+	transform: rotate(90deg);
+}
+
+.faq-item p {
+	padding: 0 1.5rem 1.5rem 1.5rem;
+	color: #475569;
+	line-height: 1.7;
+}
+
+/* Comparison Table */
+.coupon-comparison {
+	max-width: 1000px;
+	margin: 2rem auto 0 auto;
+	padding: 2rem 1rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+}
+
+.coupon-comparison h2 {
+	font-size: 1.75rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.comparison-table {
+	width: 100%;
+	border-collapse: collapse;
+	overflow-x: auto;
+}
+
+.comparison-table thead {
+	background: #0b74da;
+	color: #fff;
+}
+
+.comparison-table th, .comparison-table td {
+	padding: 1rem;
+	text-align: left;
+	border: 1px solid #e2e8f0;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+	background: #f8fafc;
+}
+
+.comparison-table tbody tr:hover {
+	background: #eef2f7;
+}
+
+/* Testimonials */
+.coupon-testimonials {
+	max-width: 1000px;
+	margin: 2rem auto 0 auto;
+	padding: 2rem 1rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(30, 41, 59, 0.08);
+}
+
+.coupon-testimonials h2 {
+	font-size: 1.75rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.testimonials-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.5rem;
+}
+
+.testimonial {
+	background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+	padding: 1.5rem;
+	border-radius: 8px;
+	border-left: 4px solid #10b981;
+}
+
+.testimonial p {
+	color: #475569;
+	line-height: 1.7;
+	margin-bottom: 1rem;
+}
+
+.testimonial footer {
+	font-weight: 600;
+	color: #0b74da;
+	font-size: 0.95rem;
+}
+
+/* Final CTA Section */
+.final-cta {
+	max-width: 800px;
+	margin: 2rem auto 0 auto;
+	padding: 3rem 2rem;
+	background: linear-gradient(90deg, #0b74da 60%, #38bdf8 100%);
+	color: #fff;
+	border-radius: 12px;
+	text-align: center;
+	box-shadow: 0 4px 24px rgba(30, 41, 59, 0.15);
+}
+
+.final-cta h2 {
+	color: #fff;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.final-cta p {
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
+}
+
+.cta-subtext {
+	font-size: 0.95rem;
+	opacity: 0.9;
+	margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.coupon-hero h1 {
+		font-size: 1.75rem;
+	}
+
+	.hero-subtitle {
+		font-size: 1rem;
+	}
+
+	.coupon-cta-large {
+		font-size: 1.1rem;
+		padding: 1em 1.75em;
+	}
+
+	.comparison-table {
+		font-size: 0.9rem;
+	}
+
+	.comparison-table th, .comparison-table td {
+		padding: 0.75rem;
+	}
+
+	.features-grid, .usecases-container, .articles-grid, .testimonials-container {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 480px) {
+	.coupon-hero {
+		padding: 1.5rem 0.75rem;
+		border-radius: 0 0 20px 20px;
+	}
+
+	.coupon-hero h1 {
+		font-size: 1.5rem;
+	}
+
+	.coupon-cta-btn {
+		font-size: 1.1rem;
+		padding: 0.8em 1.5em;
+	}
+
+	.coupon-cta-large {
+		max-width: 100%;
+	}
+
+	.quick-stats {
+		gap: 1rem;
+		padding: 1.5rem 0.75rem;
+	}
+}
