@@ -24,59 +24,37 @@
     {% endfor %}
   </head>
   <body>
-  <!-- Fixed Header -->
-  <header class="fixed-header">
-    <div class="container">
-      <a href="/" class="text-xl font-extrabold text-green-400">Anti-Detect Tools</a>
-      <nav>
-        <a href="/en/">Home</a>
-        <a href="/en/tools/">Tools</a>
-        <a href="/en/blog/">Blog</a>
-        <a href="/en/about/">About</a>
-      </nav>
-      <!-- Language Switcher -->
-  <nav class="lang-switcher">
-        {% assign langs = site.languages | default: "en,vi,ru,zh,pt" | split: "," %}
-        {% assign lang_names = "English,Tiếng Việt,Русский,中文,Português" | split: "," %}
-        {% assign cur_lang = page.lang | default: "en" %}
-        {% for l in langs %}
-          {% assign idx = forloop.index0 %}
-          {% assign name = lang_names[idx] %}
-          {% if l == cur_lang %}
-            <span class="active">{{ name }}</span>
-          {% else %}
-            {% if l == "en" %}
-              <a href="/en/">{{ name }}</a>
-            {% else %}
-              <a href="/{{ l }}/">{{ name }}</a>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      </nav>
-    </div>
-  </header>
+  <!-- Per-language header include -->
+  {% case page.lang | default: site.default_lang %}
+  {% when "pt" %}
+    {% include header-pt.html %}
+  {% when "ru" %}
+    {% include header-ru.html %}
+  {% when "vi" %}
+    {% include header-vi.html %}
+  {% when "zh" %}
+    {% include header-zh.html %}
+  {% else %}
+    {% include header-en.html %}
+  {% endcase %}
 
   <main class="site-main container">
     {{ content }}
   </main>
 
-  <!-- Fixed Footer -->
-  <footer class="fixed-footer">
-    <div class="container">
-      <p>&copy; 2025 Anti-Detect Tools. All rights reserved.</p>
-      <p class="legal">Legal: No cracked software, no cheating, no spam. All tools comply with laws and platform terms.</p>
-      <nav>
-        <a href="/en/terms-of-service/">Terms of Service</a>
-        <a href="/en/privacy-policy/">Privacy Policy</a>
-        <a href="/disclosure.md">Affiliate Disclosure</a>
-      </nav>
-    </div>
-  </footer>
-    <main>
-      {{ content }}
-    </main>
-    <footer>
-      <p>&copy; {{ "now" | date: "%Y" }} {{ site.title }}</p>
-    </footer>
+  <!-- Per-language footer include -->
+  {% case page.lang | default: site.default_lang %}
+  {% when "pt" %}
+    {% include footer-pt.html %}
+  {% when "ru" %}
+    {% include footer-ru.html %}
+  {% when "vi" %}
+    {% include footer-vi.html %}
+  {% when "zh" %}
+    {% include footer-zh.html %}
+  {% else %}
+    {% include footer-en.html %}
+  {% endcase %}
+  
   </body>
 </html>

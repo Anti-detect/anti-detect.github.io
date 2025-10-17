@@ -27,4 +27,5 @@ Chào mừng bạn đến với Anti-Detect Tools! Đây là trang chủ tiếng
 *Lưu ý pháp lý: Không cung cấp phần mềm crack, không khuyến khích gian lận, spam hay vượt hệ thống. Người dùng tự chịu trách nhiệm nếu sử dụng sai mục đích.*
 
 © 2025 Anti-Detect Tools. Đã đăng ký bản quyền.
+
 Chào mừng đến với trang Multilogin (Tiếng Việt).

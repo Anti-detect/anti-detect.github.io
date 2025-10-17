@@ -27,4 +27,9 @@ Bem-vindo ao Anti-Detect Tools! Esta é a página inicial em português. Para in
 ---
 *Aviso legal: Não fornecemos software crackeado, não incentivamos fraudes, spam ou violação de sistemas. O usuário é responsável por suas ações.*
 
+
 © 2025 Anti-Detect Tools. Todos os direitos reservados.
+
+
+{% include footer-pt.html %}
+

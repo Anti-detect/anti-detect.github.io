@@ -43,3 +43,4 @@ Welcome to the ultimate collection of free anti-detect, MMO, and marketing tools
 *Legal notice: We do not provide cracked software, encourage cheating, spam, or system abuse. All tools comply with the law and platform terms. Users are responsible for their own actions.*
 
 © 2025 Anti-Detect Tools. All rights reserved.
+

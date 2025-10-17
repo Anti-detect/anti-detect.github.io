@@ -83,26 +83,10 @@
 <body>
   <!-- Skip Link for Accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <!-- Sticky Header -->
-  <header class="sticky-header">
-    <div class="container">
-      <div class="header-top">
-        <!-- Language Selector -->
-        <nav class="language-nav" aria-label="Language Selection">
-          <button class="lang-button" aria-expanded="false">
-            <img src="assets/icons/globe.svg" alt="" aria-hidden="true">
-            <span>Language</span>
-          </button>
-          <ul class="lang-dropdown" role="menu" hidden>
-            <li><a href="en/index.md" role="menuitem">English</a></li>
-            <li><a href="pt/index.md" role="menuitem">Português</a></li>
-            <li><a href="ru/index.md" role="menuitem">Русский</a></li>
-            <li><a href="vi/index.md" role="menuitem">Tiếng Việt</a></li>
-            <li><a href="zh/index.md" role="menuitem">中文</a></li>
-          </ul>
-        </nav>
-  <main>
+
+  {% include header-en.html %}
+
+  <main id="main-content">
     <section class="featured">
       <h2>Featured Articles</h2>
       <ul>
@@ -123,16 +107,7 @@
         <li><a href="en/about.md">About Us</a></li>
       </ul>
     </section>
-  </main>
-  <footer>
-    <div class="container">
-      <nav aria-label="Footer Navigation">
-        <a href="en/privacy-policy.md">Privacy Policy</a> |
-        <a href="en/terms-of-service.md">Terms of Service</a>
-      </nav>
-      <p>&copy; 2025 Anti-Detect Guide. All rights reserved.</p>
-    </div>
-  </footer>
+
     <h2>Community & Support</h2>
     <ul>
       <li>24/7 support via Telegram, email</li>
@@ -149,15 +124,8 @@
     <p><em>Legal notice: No cracked software, no cheating, no spam. All tools comply with laws and platform terms. Users are responsible for their own actions.</em></p>
     <p>© 2025 Anti-Detect Tools. All rights reserved.</p>
   </main>
-  <footer class="fixed-footer">
-    <div class="container">
-      <p>&copy; 2025 Anti-Detect Tools. All rights reserved.</p>
-      <nav>
-        <a href="/en/terms-of-service/">Terms of Service</a>
-        <a href="/en/privacy-policy/">Privacy Policy</a>
-        <a href="/disclosure.md">Affiliate Disclosure</a>
-      </nav>
-    </div>
-  </footer>
+
+  {% include footer-en.html %}
+
 </body>
 </html>
