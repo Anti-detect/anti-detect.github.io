@@ -1,26 +1,33 @@
-<header class="sticky-header">
-  <div class="container">
-    <a href="/zh/" class="site-title">Anti-Detect Tools</a>
-    <nav class="main-nav" aria-label="主导航">
+<header class="site-header">
+  <div class="container" role="banner">
+  <div class="header-row">
+      <a href="/zh/" class="site-title">Anti-Detect Tools</a>
+      <div>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">切换导航 / Toggle navigation</span>
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <nav id="primary-navigation" class="nav" aria-label="主导航" hidden>
       <a href="/zh/">主页</a>
       <a href="/zh/tools/">工具</a>
       <a href="/zh/blog/">博客</a>
       <a href="/zh/about/">关于</a>
+      <a href="/zh/privacy-policy/">隐私政策</a>
+      <a href="/zh/terms-of-service/">服务条款</a>
+      <a class="cta" href="/en/tools/">Tools</a>
+  <div class="language-inline">
+        <label for="lang-select" class="sr-only">选择语言</label>
+        <select id="lang-select" onchange="if(this.value) window.location.href=this.value">
+          <option value="/en/">English</option>
+          <option value="/pt/">Português</option>
+          <option value="/ru/">Русский</option>
+          <option value="/vi/">Tiếng Việt</option>
+          <option value="/zh/" selected>中文</option>
+        </select>
+      </div>
     </nav>
-    <div class="header-top">
-      <nav class="language-nav" aria-label="语言选择">
-        <button class="lang-button" aria-expanded="false">
-          <img src="/assets/icons/globe.svg" alt="" aria-hidden="true">
-          <span>语言</span>
-        </button>
-        <ul class="lang-dropdown" role="menu" hidden>
-          <li><a href="/en/" role="menuitem">English</a></li>
-          <li><a href="/pt/" role="menuitem">Português</a></li>
-          <li><a href="/ru/" role="menuitem">Русский</a></li>
-          <li><a href="/vi/" role="menuitem">Tiếng Việt</a></li>
-          <li><a href="/zh/" role="menuitem">中文</a></li>
-        </ul>
-      </nav>
-    </div>
   </div>
 </header>

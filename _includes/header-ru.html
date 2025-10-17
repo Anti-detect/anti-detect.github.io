@@ -1,26 +1,33 @@
-<header class="sticky-header">
-  <div class="container">
-    <a href="/ru/" class="site-title">Anti-Detect Tools</a>
-    <nav class="main-nav" aria-label="Основная навигация">
+<header class="site-header">
+  <div class="container" role="banner">
+    <div class="header-row">
+      <a href="/ru/" class="site-title">Anti-Detect Tools</a>
+      <div>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Переключить навигацию</span>
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <nav id="primary-navigation" class="nav" aria-label="Основная навигация" hidden>
       <a href="/ru/">Главная</a>
       <a href="/ru/tools/">Инструменты</a>
       <a href="/ru/blog/">Блог</a>
       <a href="/ru/about/">О нас</a>
+      <a href="/ru/privacy-policy/">Конфиденциальность</a>
+      <a href="/ru/terms-of-service/">Условия</a>
+      <a class="cta" href="/ru/tools/">Инструменты</a>
+      <div class="language-inline">
+        <label for="lang-select-ru" class="sr-only">Выбрать язык</label>
+        <select id="lang-select-ru" onchange="if(this.value) window.location.href=this.value">
+          <option value="/en/">English</option>
+          <option value="/pt/">Português</option>
+          <option value="/ru/" selected>Русский</option>
+          <option value="/vi/">Tiếng Việt</option>
+          <option value="/zh/">中文</option>
+        </select>
+      </div>
     </nav>
-    <div class="header-top">
-      <nav class="language-nav" aria-label="Выбор языка">
-        <button class="lang-button" aria-expanded="false">
-          <img src="/assets/icons/globe.svg" alt="" aria-hidden="true">
-          <span>Язык</span>
-        </button>
-        <ul class="lang-dropdown" role="menu" hidden>
-          <li><a href="/en/" role="menuitem">English</a></li>
-          <li><a href="/pt/" role="menuitem">Português</a></li>
-          <li><a href="/ru/" role="menuitem">Русский</a></li>
-          <li><a href="/vi/" role="menuitem">Tiếng Việt</a></li>
-          <li><a href="/zh/" role="menuitem">中文</a></li>
-        </ul>
-      </nav>
-    </div>
   </div>
 </header>

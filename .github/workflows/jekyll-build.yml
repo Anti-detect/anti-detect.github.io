@@ -21,3 +21,11 @@ jobs:
           bundle install
       - name: Build site
         run: bundle exec jekyll build
+      - name: Install html-proofer
+        run: |
+          gem install html-proofer
+      - name: Run link checks (html-proofer)
+        run: |
+          # Ignore external URLs to avoid blocking on third-party sites; add more patterns if needed
+          bundle exec htmlproofer ./_site --disable-external --allow-hash-href \
+            --url-ignore '/^https:\/\/multilogin.com/','/^https:\/\/www.google-analytics.com/'

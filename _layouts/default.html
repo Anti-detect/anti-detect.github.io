@@ -1,105 +1,103 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ page.lang | default: site.default_lang }}">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.description | default: site.description }}">
-  <title>{{ page.title | default: site.title }}</title>
-    <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    {%- assign current_lang = page.lang | default: site.default_lang -%}
-    {%- if page.canonical -%}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b74da">
+    <meta name="generator" content="Jekyll">
+
+    <title>{{ page.title | default: site.title }}</title>
+    {% if page.description or site.description %}
+      <meta name="description" content="{{ page.description | default: site.description }}">
+    {% endif %}
+
+    {%- comment -%} Social/Open Graph (page overrides allowed) {%- endcomment -%}
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
+    {% if page.og_image or site.og_image %}
+      <meta property="og:image" content="{{ page.og_image | default: site.og_image | relative_url }}">
+    {% endif %}
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:url" content="{{ page.canonical | default: page.url | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+
+    {%- comment -%} Canonical {%- endcomment -%}
+    {% if page.canonical %}
       <link rel="canonical" href="{{ page.canonical }}">
-    {%- else -%}
-      <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    {%- endif -%}
-    {%- comment -%}
-      Open Graph / Twitter meta — prefer page-level variables when provided
-    <!doctype html>
-    <html lang="{{ page.lang | default: site.default_lang }}">
-      <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-        <meta name="generator" content="Jekyll">
-        <meta name="theme-color" content="#0b74da">
-        <title>{{ page.title | default: site.title }}</title>
-        {% if page.description or site.description %}
-        <meta name="description" content="{{ page.description | default: site.description }}">
-        {% endif %}
+    {% else %}
+      <link rel="canonical" href="{{ page.url | absolute_url }}">
+    {% endif %}
 
-        {%- comment -%} Basic social meta (page overrides via front matter) {%- endcomment -%}
-        <meta property="og:site_name" content="{{ site.title }}">
-        <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
-        {% if page.og_image or site.og_image %}
-        <meta property="og:image" content="{{ page.og_image | default: site.og_image | relative_url }}">
-        {% endif %}
-        <meta property="og:description" content="{{ page.description | default: site.description }}">
-        <meta property="og:url" content="{{ page.canonical | default: page.url | absolute_url }}">
-        <meta name="twitter:card" content="summary_large_image">
+    {%- comment -%} Hreflang for language roots (improves discoverability) {%- endcomment -%}
+    {% for lang in site.languages %}
+      <link rel="alternate" hreflang="{{ lang }}" href="{{ '/' | append: lang | prepend: site.url | absolute_url }}">
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ '/' | append: site.default_lang | prepend: site.url | absolute_url }}">
 
-        {%- comment -%} Canonical/hreflang preserved from existing template {%- endcomment -%}
-        {% if page.canonical %}
-          <link rel="canonical" href="{{ page.canonical }}">
-        {% endif %}
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/manifest.webmanifest' | relative_url }}">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/rss.xml' | relative_url }}">
 
-        <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/rss.xml' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 
-        <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-
-        {%- comment -%} Structured data: WebSite + Organization {%- endcomment -%}
-        <script type="application/ld+json">
+    {%- comment -%} Structured data: Organization + WebSite {%- endcomment -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
         {
-          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "{{ site.url | absolute_url }}#organization",
+          "name": "{{ site.title | escape }}",
+          "url": "{{ site.url | absolute_url }}",
+          "logo": "{{ '/assets/icons/favicon.svg' | relative_url }}"
+        },
+        {
           "@type": "WebSite",
           "name": "{{ site.title | escape }}",
-          "url": "{{ site.url | default: site.github.url | absolute_url }}",
-          "description": "{{ site.description | default: site.title | escape }}",
-          "inLanguage": "{{ page.lang | default: site.default_lang }}"
+          "url": "{{ site.url | absolute_url }}",
+          "inLanguage": "{{ page.lang | default: site.default_lang }}",
+          "publisher": { "@id": "{{ site.url | absolute_url }}#organization" }
         }
-        </script>
-      </head>
-      <body>
-        <a class="skip-link" href="#content">跳到内容 / Skip to content</a>
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到内容 / Skip to content</a>
 
-        {% case page.lang | default: site.default_lang %}
-        {% when 'pt' %}
-          {% include header-pt.html %}
-        {% when 'ru' %}
-          {% include header-ru.html %}
-        {% when 'vi' %}
-          {% include header-vi.html %}
-        {% when 'zh' %}
-          {% include header-zh.html %}
-        {% else %}
-          {% include header-en.html %}
-        {% endcase %}
+    {% case page.lang | default: site.default_lang %}
+    {% when 'pt' %}
+      {% include header-pt.html %}
+    {% when 'ru' %}
+      {% include header-ru.html %}
+    {% when 'vi' %}
+      {% include header-vi.html %}
+    {% when 'zh' %}
+      {% include header-zh.html %}
+    {% else %}
+      {% include header-en.html %}
+    {% endcase %}
 
-        <main id="content" class="site-main container">
-          {{ content }}
-        </main>
+    <main id="content" class="site-main container">
+      {{ content }}
+    </main>
 
-        {% case page.lang | default: site.default_lang %}
-        {% when 'pt' %}
-          {% include footer-pt.html %}
-        {% when 'ru' %}
-          {% include footer-ru.html %}
-        {% when 'vi' %}
-          {% include footer-vi.html %}
-        {% when 'zh' %}
-          {% include footer-zh.html %}
-        {% else %}
-          {% include footer-en.html %}
-        {% endcase %}
+    {% case page.lang | default: site.default_lang %}
+    {% when 'pt' %}
+      {% include footer-pt.html %}
+    {% when 'ru' %}
+      {% include footer-ru.html %}
+    {% when 'vi' %}
+      {% include footer-vi.html %}
+    {% when 'zh' %}
+      {% include footer-zh.html %}
+    {% else %}
+      {% include footer-en.html %}
+    {% endcase %}
 
-        <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
-      </body>
-    </html>
-    {% include footer-zh.html %}
-  {% else %}
-    {% include footer-en.html %}
-  {% endcase %}
-  
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </body>
 </html>

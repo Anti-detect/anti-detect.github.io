@@ -15,10 +15,27 @@ if (localStorage.getItem('darkMode') === 'true' ||
 // Language Selector
 function toggleLanguageMenu() {
   const menu = document.querySelector('.lang-dropdown');
+  if (!menu) return;
   const expanded = menu.getAttribute('aria-expanded') === 'true';
-  menu.setAttribute('aria-expanded', !expanded);
+  menu.setAttribute('aria-expanded', String(!expanded));
   menu.hidden = expanded;
 }
+
+// Mobile nav toggle
+document.querySelectorAll('.nav-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('aria-controls');
+    const nav = document.getElementById(targetId);
+    if (!nav) return;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    if (expanded) {
+      nav.hidden = true;
+    } else {
+      nav.hidden = false;
+    }
+  });
+});
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
