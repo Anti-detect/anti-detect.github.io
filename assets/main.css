@@ -1,8 +1,85 @@
-body { background: #0e0e0e; color: #fff; font-family: Arial, sans-serif; padding: 2rem; line-height: 1.6; }
-h1, h2 { color: #00e0ff; }
-a { color: #00c6ff; }
-ul { padding-left: 1.2rem; }
-.section { margin-bottom: 3rem; }
-footer { margin-top: 4rem; font-size: 0.9rem; color: #aaa; }
-.main-img { max-width:100%; margin-bottom:20px; }
-.main-video { max-width:90%; margin:20px 0; }
+.coupon-meta .coupon-limited {
+	color: #fbbf24;
+}
+
+body { background: #f1f5f9; color: #1e293b; font-family: 'Roboto', Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+h1, h2 { color: #0ea5e9; }
+a { color: #0ea5e9; transition: color 0.2s; }
+a:hover { color: #38bdf8; }
+.coupon-landing { max-width: 900px; margin: 0 auto; padding: 0; }
+.coupon-hero {
+	text-align: center;
+	padding: 3rem 1rem 2rem 1rem;
+	background: linear-gradient(90deg,#1e293b 60%,#38bdf8 100%);
+	color: #fff;
+	border-radius: 0 0 32px 32px;
+	box-shadow: 0 4px 24px rgba(30,41,59,0.08);
+}
+.coupon-hero h1 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	margin-bottom: 1rem;
+}
+.coupon-hero .coupon-code {
+	background: #fff;
+	color: #1e293b;
+	padding: 0.2em 0.5em;
+	border-radius: 6px;
+	font-weight: 700;
+	font-size: 1.25rem;
+	letter-spacing: 1px;
+}
+.coupon-cta-btn {
+	display: inline-block;
+	background: #38bdf8;
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 1em 2em;
+	border-radius: 8px;
+	text-decoration: none;
+	box-shadow: 0 2px 8px rgba(30,41,59,0.15);
+	margin-top: 1.5rem;
+	transition: background 0.2s;
+}
+.coupon-cta-btn:hover {
+	background: #0ea5e9;
+}
+.coupon-hero .coupon-meta {
+	margin-top: 2rem;
+	font-size: 1rem;
+	opacity: 0.85;
+}
+.coupon-howto, .coupon-about, .coupon-legal {
+	max-width: 600px;
+	margin: 2rem auto 0 auto;
+	padding: 2rem 1rem;
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(30,41,59,0.07);
+	color: #334155;
+}
+.coupon-howto h2, .coupon-about h2 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	color: #0ea5e9;
+}
+.coupon-howto ol, .coupon-about ul {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	margin-left: 1.5em;
+}
+.coupon-howto .coupon-help {
+	margin-top: 1.5rem;
+	font-size: 1rem;
+	color: #64748b;
+}
+.coupon-legal {
+	padding: 1rem 1rem;
+	color: #64748b;
+	font-size: 0.95rem;
+}
+.coupon-legal hr {
+	margin: 1.5rem 0;
+}
