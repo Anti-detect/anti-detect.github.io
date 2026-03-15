@@ -1,0 +1,3 @@
+Trigger file for GitHub Actions optimize-media workflow.
+Update timestamp to re-run workflows.
+Timestamp: 2026-03-15T00:00:00Z
