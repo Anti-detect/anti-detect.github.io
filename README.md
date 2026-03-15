@@ -31,3 +31,29 @@ Additional pro-setup and deployment notes
 - Run a Lighthouse audit and provide fixes.
 
 If you want me to proceed, tell me which of the next steps to run first. I can generate the optimized images and the MP4 fallback locally next.
+
+Automated workflows added
+-------------------------
+
+- `.github/workflows/optimize-media.yml`: runs `tools/optimize_images.sh` and `tools/encode_video.sh` on push to `assets/` and uploads optimized artifacts.
+- `.github/workflows/deploy-worker.yml`: publishes the Cloudflare Worker (requires `CLOUDFLARE_API_TOKEN`).
+- `.github/workflows/lighthouse.yml`: runs Lighthouse CI against `SITE_URL` (set as a repository secret) when manually triggered.
+
+Local commands
+--------------
+Run image optimization locally (requires ImageMagick, cwebp, avifenc):
+```bash
+./tools/optimize_images.sh assets/multilogin-dashboard.jpg
+```
+
+Encode video fallbacks locally (requires ffmpeg):
+```bash
+./tools/encode_video.sh assets/Coupon.webm
+```
+
+Deploy Cloudflare Worker with Wrangler (example):
+```bash
+npm install -g wrangler
+# set secret: wrangler secret put OPENAI_API_KEY
+wrangler publish tools/cloudflare_worker_ai_example.js --name anti-detect-ai
+```

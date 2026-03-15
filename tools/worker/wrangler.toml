@@ -1,0 +1,11 @@
+name = "anti-detect-ai"
+main = "cloudflare_worker_ai_example.js"
+compatibility_date = "2026-03-15"
+
+# Replace with your account id
+account_id = "<YOUR_CLOUDFLARE_ACCOUNT_ID>"
+
+[vars]
+# Example: export OPENAI_API_KEY as secret in Cloudflare dashboard
+# Do not store secrets in this file.
+

@@ -1,0 +1,27 @@
+name: Lighthouse CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'index.html'
+      - 'assets/**'
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install lighthouse-ci
+        run: |
+          npm install -g @lhci/cli@0.8.x
+      - name: Run Lighthouse (requires SITE_URL secret)
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: |
+          if [ -z "$SITE_URL" ]; then echo "SITE_URL secret not set; skipping Lighthouse"; exit 0; fi
+          lhci autorun --collect.url=$SITE_URL --collect.numberOfRuns=3 --assert.settings.throttlingMethod=devtools

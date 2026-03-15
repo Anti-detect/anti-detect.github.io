@@ -1,0 +1,35 @@
+name: Optimize media
+
+on:
+  push:
+    paths:
+      - 'assets/**'
+      - 'tools/optimize_images.sh'
+      - 'tools/encode_video.sh'
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg webp libwebp-dev libavif-bin imagemagick
+      - name: Make scripts executable
+        run: |
+          chmod +x tools/optimize_images.sh || true
+          chmod +x tools/encode_video.sh || true
+      - name: Optimize images if present
+        run: |
+          if [ -f assets/multilogin-dashboard.jpg ]; then ./tools/optimize_images.sh assets/multilogin-dashboard.jpg; else echo "No dashboard image found"; fi
+      - name: Encode video if present
+        run: |
+          if [ -f assets/Coupon.webm ]; then ./tools/encode_video.sh assets/Coupon.webm; else echo "No Coupon.webm found"; fi
+      - name: Upload optimized artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: optimized-media
+          path: |
+            assets/optimized/**
+            assets/optimized || true

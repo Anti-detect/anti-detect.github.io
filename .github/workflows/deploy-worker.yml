@@ -1,0 +1,20 @@
+name: Deploy Cloudflare Worker
+
+on:
+  push:
+    paths:
+      - 'tools/cloudflare_worker_ai_example.js'
+      - 'tools/worker/wrangler.toml'
+
+jobs:
+  deploy-worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Wrangler
+        uses: cloudflare/wrangler-action@2
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Publish worker
+        run: |
+          wrangler publish tools/cloudflare_worker_ai_example.js --name anti-detect-ai
