@@ -11,6 +11,10 @@
   <link rel="preload" href="assets/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/main.css" as="style">
   <link rel="preload" href="assets/og-image.jpg" as="image">
+  <link rel="preload" href="assets/multilogin-dashboard.jpg" as="image">
+  <link rel="preconnect" href="https://multilogin.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="manifest" href="assets/manifest.webmanifest">
 
   <!-- Meta Tags Enhanced -->
   <meta name="description" content="Expert reviews, tutorials, and strategies for Multilogin and anti-detect browsers. Master account management, privacy protection, and browser fingerprinting. Free guides & tools.">
@@ -71,6 +75,13 @@
       document.documentElement.classList.add('dark-mode');
     }
   </script>
+  <!-- Critical inline styles for fast LCP (small, safe) -->
+  <style>
+    .hero{display:block}
+    .hero .container{display:grid;grid-template-columns:1fr 480px;gap:24px;align-items:center}
+    @media(max-width:900px){.hero .container{grid-template-columns:1fr}}
+    .hero img{width:100%;height:auto;display:block}
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -82,7 +93,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <figure class="dashboard" aria-hidden="false">
-          <img src="assets/multilogin-dashboard.jpg" alt="Multilogin dashboard - manage multiple accounts" width="1200" height="675" loading="lazy" fetchpriority="high">
+          <img src="assets/multilogin-dashboard.jpg" alt="Multilogin dashboard - manage multiple accounts" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async" srcset="assets/multilogin-dashboard.jpg 1200w" sizes="(max-width:1200px)100vw,1200px">
           <figcaption>Multilogin dashboard — manage all your accounts in one place</figcaption>
         </figure>
 
