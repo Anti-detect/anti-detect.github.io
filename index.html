@@ -82,6 +82,27 @@
     @media(max-width:900px){.hero .container{grid-template-columns:1fr}}
     .hero img{width:100%;height:auto;display:block}
   </style>
+  <!-- Consent-aware analytics loader (loads GA only after explicit consent) -->
+  <script>
+    window.adb = window.adb || {};
+    function loadGA(measurementId){
+      if(!measurementId) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', measurementId, { anonymize_ip: true });
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+      s.async = true; document.head.appendChild(s);
+    }
+    // Auto-load if consent already granted
+    try{
+      if(localStorage && localStorage.getItem('adb_consent') === 'granted'){
+        // Replace 'G-XXXXXXX' with your Measurement ID in repo or set via deploy script
+        loadGA('G-XXXXXXX');
+      }
+    }catch(e){/*ignore*/}
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -292,6 +313,37 @@
       <p><em>Legal notice: No cracked software, no cheating, no spam. Users are responsible for their actions.</em></p>
       <p>© 2026 Anti-Detect Tools. All rights reserved.</p>
     </section>
+
+    <!-- Cookie consent banner (GDPR-friendly, lightweight) -->
+    <div id="cookie-consent" style="position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #e5e7eb;padding:16px;border-radius:8px;box-shadow:0 6px 24px rgba(16,24,40,0.08);display:none;z-index:9999;font-family:inherit;">
+      <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <strong>We use cookies</strong>
+          <div style="font-size:0.95rem;margin-top:6px;color:#374151">We use cookies for analytics and to improve your experience. Accept to enable GA tracking.</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="consent-accept" style="background:#0ea5e9;color:#fff;border:0;padding:8px 12px;border-radius:6px;cursor:pointer">Accept</button>
+          <button id="consent-deny" style="background:transparent;color:#374151;border:1px solid #e5e7eb;padding:8px 12px;border-radius:6px;cursor:pointer">Reject</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function(){
+        var banner = document.getElementById('cookie-consent');
+        var accept = document.getElementById('consent-accept');
+        var deny = document.getElementById('consent-deny');
+        function hide(){ if(banner) banner.style.display='none'; }
+        function show(){ if(banner) banner.style.display='block'; }
+        try{
+          var s = localStorage.getItem('adb_consent');
+          if(!s) { show(); }
+          else { hide(); if(s==='granted'){ loadGA('G-XXXXXXX'); } }
+        }catch(e){ show(); }
+        if(accept){ accept.addEventListener('click', function(){ try{ localStorage.setItem('adb_consent','granted'); }catch(e){} hide(); loadGA('G-XXXXXXX'); }); }
+        if(deny){ deny.addEventListener('click', function(){ try{ localStorage.setItem('adb_consent','denied'); }catch(e){} hide(); }); }
+      })();
+    </script>
 
   </main>
 
