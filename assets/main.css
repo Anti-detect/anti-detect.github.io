@@ -85,6 +85,8 @@ a:hover { color: #38bdf8; }
 	transition: background 0.2s;
 }
 .coupon-cta-btn:hover {
+	/* --- INDEX.HTML LAYOUT RESTORE --- */
+	.hero {
 	background: #0ea5e9;
 }
 .coupon-hero .coupon-meta {
@@ -92,25 +94,31 @@ a:hover { color: #38bdf8; }
 	font-size: 1rem;
 	opacity: 0.85;
 }
+	.hero-grid {
 .site-main { padding: 2rem 0 4rem 0; }
 
 /* Small utility for CTAs */
 .btn { display:inline-block; padding:0.5rem 1rem; border-radius:8px; text-decoration:none }
 .btn-primary { background: var(--brand-dark); color:#fff; font-weight:700 }
+	.hero-copy {
 
 /* Responsive tweaks */
+	.hero h1 {
 @media (max-width: 640px) {
   .container { padding: 0 0.75rem; }
   .coupon-hero { padding: 2rem 0.75rem; }
   .coupon-hero h1 { font-size: 1.5rem }
+	.hero .lead {
 }
 
 /* Header and nav */
 .site-header { background: #fff; border-bottom: 1px solid #eef2f7; }
+	.hero .meta {
 .site-header .container { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 .header-row { display:flex; align-items:center; justify-content:space-between; gap:1rem; width:100% }
 .language-inline { margin-left:0.5rem }
 .site-title { font-weight:800; color:var(--brand-dark); text-decoration:none; font-size:1.125rem }
+	.features {
 
 .nav {
 	display: flex;
@@ -118,14 +126,17 @@ a:hover { color: #38bdf8; }
 	align-items: center;
 	font-size: 1.08rem;
 	font-weight: 500;
+	.feature-list {
 	background: none;
 	box-shadow: none;
 }
 .nav a {
 	padding: 0.5rem 0.5rem;
+	.feature-list li {
 	border-radius: 6px;
 	text-decoration: none;
 	color: var(--brand-dark);
+	.pricing {
 	transition: background 0.15s, color 0.15s;
 }
 .nav a:hover, .nav a:focus {
@@ -133,11 +144,13 @@ a:hover { color: #38bdf8; }
 	color: #0ea5e9;
 }
 .nav .cta {
+	.pricing-grid {
 	background: var(--brand-dark);
 	color: #fff;
 	padding: 0.5rem 1rem;
 	border-radius: 8px;
 	font-weight: 700;
+	.plan {
 	margin-left: 0.5rem;
 	box-shadow: 0 2px 8px rgba(30,41,59,0.10);
 }
@@ -149,14 +162,17 @@ a:hover { color: #38bdf8; }
 .nav[hidden] { display: flex !important; }
 
 @media (max-width: 860px) {
+	.plan h3 {
 	.nav {
 		flex-wrap: wrap;
 		gap: 0.5rem;
 		font-size: 1rem;
+	.plan .price {
 		justify-content: flex-start;
 		padding: 0.5rem 0 0.5rem 0;
 	}
 	.nav a, .nav .cta {
+	.primary-btn {
 		padding: 0.5rem 0.5rem;
 		margin: 0;
 		border-radius: 6px;
@@ -171,8 +187,10 @@ a:hover { color: #38bdf8; }
 	.site-header .container { flex-direction:column; align-items:flex-start }
 }
 .coupon-howto, .coupon-about, .coupon-legal {
+	.primary-btn:hover {
 	max-width: 600px;
 	margin: 2rem auto 0 auto;
+	.faq-ai {
 	padding: 2rem 1rem;
 	background: #fff;
 	border-radius: 12px;
@@ -180,17 +198,21 @@ a:hover { color: #38bdf8; }
 	color: #334155;
 }
 .coupon-howto h2, .coupon-about h2 {
+	.faq-ai h2 {
 	font-size: 1.5rem;
 	font-weight: 700;
 	margin-bottom: 1rem;
+	.faq-ai dt {
 	color: #0ea5e9;
 }
 .coupon-howto ol, .coupon-about ul {
 	font-size: 1.1rem;
+	.faq-ai dd {
 	line-height: 1.7;
 	margin-left: 1.5em;
 }
 .coupon-howto .coupon-help {
+	.legal {
 	margin-top: 1.5rem;
 	font-size: 1rem;
 	color: #64748b;
@@ -199,6 +221,7 @@ a:hover { color: #38bdf8; }
 	padding: 1rem 1rem;
 	color: #64748b;
 	font-size: 0.95rem;
+	.legal hr {
 }
 .coupon-legal hr {
 	margin: 1.5rem 0;
