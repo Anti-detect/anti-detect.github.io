@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b74da">
-    <meta name="generator" content="Jekyll">
+    <meta name="generator" content="Jekyll {{ jekyll.version }}">
 
     <title>{{ page.title | default: site.title }}</title>
     {% if page.description or site.description %}
@@ -20,13 +20,13 @@
     {% endif %}
     <meta name="author" content="{{ site.author | default: 'Anti-Detect Team' }}">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0b74da">
     <meta name="color-scheme" content="light dark">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     {%- comment -%} Social/Open Graph (page overrides allowed) {%- endcomment -%}
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:title" content="{{ page.og_title | default: page.title | default: site.title }}">
+    <meta property="og:locale" content="en_US">
     {% if page.og_image %}
       <meta property="og:image" content="{{ page.og_image | absolute_url }}">
     {% elsif site.site_og_image %}
@@ -52,12 +52,6 @@
       <link rel="canonical" href="{{ page.url | absolute_url }}">
     {% endif %}
 
-    {%- comment -%} Hreflang for language roots (improves discoverability) {%- endcomment -%}
-    {% for lang in site.languages %}
-      <link rel="alternate" hreflang="{{ lang }}" href="{{ '/' | append: lang | prepend: site.url | absolute_url }}">
-    {% endfor %}
-    <link rel="alternate" hreflang="x-default" href="{{ '/' | append: site.default_lang | prepend: site.url | absolute_url }}">
-
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/favicon.svg' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/apple-touch-icon.png' | relative_url }}">
   <link rel="manifest" href="{{ '/assets/manifest.webmanifest' | relative_url }}">
@@ -77,9 +71,6 @@
           "url": "{{ site.url | absolute_url }}",
           "logo": "{{ site.site_og_image | default: '/assets/icons/favicon.svg' | absolute_url }}",
           "description": "{{ site.description | escape }}",
-          "sameAs": [
-            "https://t.me/AntiDetectToolsGroup"
-          ],
           "contactPoint": {
             "@type": "ContactPoint",
             "email": "{{ site.email }}"
@@ -87,19 +78,21 @@
         },
         {
           "@type": "WebSite",
+          "@id": "{{ site.url | absolute_url }}#website",
           "name": "{{ site.title | escape }}",
           "url": "{{ site.url | absolute_url }}",
           "inLanguage": "{{ page.lang | default: site.default_lang }}",
           "publisher": { "@id": "{{ site.url | absolute_url }}#organization" },
-          "description": "{{ site.description | escape }}",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "{{ site.url | absolute_url }}?s={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          }
+          "description": "{{ site.description | escape }}"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "{{ page.canonical | default: page.url | absolute_url }}#webpage",
+          "url": "{{ page.canonical | default: page.url | absolute_url }}",
+          "name": "{{ page.title | default: site.title | escape }}",
+          "description": "{{ page.description | default: site.description | escape }}",
+          "isPartOf": { "@id": "{{ site.url | absolute_url }}#website" },
+          "inLanguage": "{{ page.lang | default: site.default_lang }}"
         }
         {% if page.layout == 'post' %},
         {

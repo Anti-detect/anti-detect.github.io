@@ -1,12 +1,17 @@
-title: Anti-Detect & Multilogin Browser Guide
-description: Expert reviews, tutorials, and strategies for Multilogin and anti-detect browsers. Master account management, privacy protection, and browser fingerprinting. Free guides & tools.
+title: Multilogin Discount Codes 2026
+description: Verified Multilogin affiliate discounts for Antidetect Browser and Cloud Phone. Use ADBNEW50 and SAVE50 to get 50% off.
 baseurl: ""
 url: "https://anti-detect.github.io"
 author: Anti-Detect Team
-    full_name: "Portuguese"
-  ru:
-    full_name: "Russian"
-  vi:
-    full_name: "Vietnamese"
-  zh:
-    full_name: "Simplified Chinese"
+email: support@anti-detect.github.io
+default_lang: en
+language: en
+timezone: UTC
+site_og_image: /real-android-hardware-cloud-phone-multilogin.jpg
+
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
