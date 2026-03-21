@@ -1,0 +1,18 @@
+{% assign pages = site.html_pages | where_exp: "p", "p.url != page.url" %}
+{% assign current_index = pages | index_of: page %}
+{% assign prev = nil %}
+{% assign next = nil %}
+{% for p in pages %}
+  {% if p.url == page.url %}
+    {% assign prev = pages[forloop.index0 | minus: 1] %}
+    {% assign next = pages[forloop.index0 | plus: 1] %}
+  {% endif %}
+{% endfor %}
+<div class="next-prev-article">
+  {% if prev %}
+    <a class="prev-article" href="{{ prev.url }}">&larr; Previous: {{ prev.title }}</a>
+  {% endif %}
+  {% if next %}
+    <a class="next-article" href="{{ next.url }}">Next: {{ next.title }} &rarr;</a>
+  {% endif %}
+</div>
