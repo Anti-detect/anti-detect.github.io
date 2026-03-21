@@ -1,43 +1,8 @@
-title: Multilogin - Best Anti-Detect Browser Guide 2025
-email: 'support@anti-detect.github.io'
-description: 'Best anti-detect browser & Multilogin guide 2025. Expert reviews, tutorials, affiliate offers (50% OFF with ADBNEW50), fingerprint protection, automation & privacy.'
-baseurl: "" # the subpath of your site, e.g. /blog
+title: Anti-Detect & Multilogin Browser Guide
+description: Expert reviews, tutorials, and strategies for Multilogin and anti-detect browsers. Master account management, privacy protection, and browser fingerprinting. Free guides & tools.
+baseurl: ""
 url: "https://anti-detect.github.io"
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-
-# SEO & Branding
 author: Anti-Detect Team
-brand_name: Anti-Detect Guide
-site_og_image: https://anti-detect.github.io/assets/og-image.jpg
-site_twitter: "@AntiDetectGuide"
-
-# Affiliate Links
-multilogin_aff_url: "https://multilogin.com/pricing/?utm_source=ADB&utm_medium=partner#a_aid=ADB&a_bid=f5fad549"
-coupon_code: "ADBNEW50"
-coupon_discount: "50%"
-
-default_lang: en
-languages:
-  - en
-  - pt
-  - ru
-  - vi
-  - zh
-lang_names:
-  en: "English"
-  pt: "Português"
-  ru: "Русский"
-  vi: "Tiếng Việt"
-  zh: "中文 (中国)"
-
-# Language-specific config
-lang_defaults:
-  en:
-    full_name: "English"
-  pt:
     full_name: "Portuguese"
   ru:
     full_name: "Russian"

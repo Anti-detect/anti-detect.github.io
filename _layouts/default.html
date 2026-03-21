@@ -119,37 +119,13 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#content">跳到内容 / Skip to content</a>
 
-    {% case page.lang | default: site.default_lang %}
-    {% when 'pt' %}
-      {% include header-pt.html %}
-    {% when 'ru' %}
-      {% include header-ru.html %}
-    {% when 'vi' %}
-      {% include header-vi.html %}
-    {% when 'zh' %}
-      {% include header-zh.html %}
-    {% else %}
-      {% include header-en.html %}
-    {% endcase %}
-
+    <a class="skip-link" href="#content">Skip to content</a>
+    {% include header-en.html %}
     <main id="content" class="site-main container">
       {{ content }}
     </main>
-
-    {% case page.lang | default: site.default_lang %}
-    {% when 'pt' %}
-      {% include footer-pt.html %}
-    {% when 'ru' %}
-      {% include footer-ru.html %}
-    {% when 'vi' %}
-      {% include footer-vi.html %}
-    {% when 'zh' %}
-      {% include footer-zh.html %}
-    {% else %}
-      {% include footer-en.html %}
-    {% endcase %}
+    {% include footer-en.html %}
 
     <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </body>
