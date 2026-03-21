@@ -1,3 +1,10 @@
+/* Khôi phục biến màu gốc cho toàn site */
+:root {
+	--brand: #0ea5e9;
+	--brand-dark: #0b74da;
+	--muted: #64748b;
+	--text: #0f172a;
+}
 .nav a.active {
 
 
