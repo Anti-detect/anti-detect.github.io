@@ -10,6 +10,9 @@
       <link>https://anti-detect.github.io/</link>
       <description>Verified 50% offers for Multilogin Antidetect Browser and Multilogin Cloud Phone.</description>
       <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-    </item>
+      </item>
+      {% if page.categories contains 'blog' %}
+        <category>blog</category>
+      {% endif %}
   </channel>
 </rss>

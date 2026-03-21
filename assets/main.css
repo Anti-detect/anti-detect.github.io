@@ -6,33 +6,42 @@
 /* Sticky header for mobile */
 @media (max-width: 860px) {
 	.site-header {
+		/* Blog styles */
+		.blog-index {
 		position: sticky;
 		top: 0;
 		z-index: 100;
 		box-shadow: 0 2px 8px rgba(30,41,59,0.07);
+		.blog-list {
 	}
 }
 
+		.blog-list li {
 /* Back to Top button */
 #back-to-top {
 	display: none;
 	position: fixed;
+		.blog-list a {
 	bottom: 32px;
 	right: 24px;
 	z-index: 9999;
 	background: var(--brand-dark);
 	color: #fff;
+		.blog-list a:hover {
 	border: none;
 	border-radius: 50%;
+		.blog-date {
 	width: 48px;
 	height: 48px;
 	font-size: 2rem;
 	box-shadow: 0 2px 8px rgba(30,41,59,0.15);
+		.pagination {
 	cursor: pointer;
 	transition: background 0.2s;
 }
 #back-to-top:hover {
 	background: #0ea5e9;
+		.blog-post {
 }
 .coupon-meta .coupon-limited {
 		color: #fbbf24;
@@ -40,12 +49,15 @@
 
 /* Site utilities and typography */
 :root {
+		.blog-post h1 {
 	--brand: #0ea5e9;
 	--brand-dark: #0b74da;
 	--muted: #64748b;
+		.blog-post .blog-date {
 	--text: #0f172a;
 }
 
+		.blog-post .blog-content {
 html,body{height:100%;}
 body {
 	background: #f8fafc;
