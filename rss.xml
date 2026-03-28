@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Multilogin Deals Updates</title>
+    <link>https://anti-detect.github.io/</link>
+    <description>Latest verified updates for Multilogin discount codes and affiliate offers.</description>
+    <language>en</language>
+    <item>
+      <title>Multilogin Promo Codes 2026: ADBNEW50 and SAVE50</title>
+      <link>https://anti-detect.github.io/</link>
+      <description>Verified 50% offers for Multilogin Antidetect Browser and Multilogin Cloud Phone.</description>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+      </item>
+      {% if page.categories contains 'blog' %}
+        <category>blog</category>
+      {% endif %}
+  </channel>
+</rss>

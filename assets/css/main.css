@@ -1,0 +1,4 @@
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 2rem; background: #fff; color: #111 }
+header h1 { margin: 0 0 1rem 0; }
+main { max-width: 900px; margin: 0 auto; }
+footer { margin-top: 3rem; color: #666 }

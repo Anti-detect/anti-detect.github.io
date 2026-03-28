@@ -1,0 +1,28 @@
+<footer class="fixed-footer">
+  <div class="container">
+    <p>&copy; 2026 Multilogin Deals. All rights reserved.</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/affiliate-disclosure/">Affiliate Disclosure</a>
+    </nav>
+  </div>
+</footer>
+
+<button id="back-to-top" title="Back to Top" aria-label="Back to Top">↑</button>
+<script>
+// Back to Top
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 300) backToTop.style.display = 'block';
+  else backToTop.style.display = 'none';
+});
+backToTop.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+
+// Set active menu
+const navLinks = document.querySelectorAll('.nav a');
+const path = window.location.pathname.replace(/\/$/, '');
+navLinks.forEach(link => {
+  if (link.pathname.replace(/\/$/, '') === path) link.classList.add('active');
+});
+</script>
