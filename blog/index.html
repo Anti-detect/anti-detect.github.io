@@ -1,0 +1,25 @@
+---
+layout: default
+title: Multilogin Deals Blog
+description: Guides on Multilogin workflows, comparisons, and verified SAAS50 / MIN50 discount codes.
+permalink: /blog/
+---
+
+<section class="hero">
+  <h1>Blog</h1>
+  <p class="lead">Workflow guides, comparisons, and coupon tips. Codes: <strong>SAAS50</strong> and <strong>MIN50</strong>.</p>
+</section>
+
+<main class="blog-index">
+  <ul class="blog-list feature-list">
+    {% for post in site.posts %}
+      {% if post.categories contains 'blog' %}
+      <li>
+        <a href="{{ post.url }}"><strong>{{ post.title }}</strong></a>
+        <span class="blog-date">{{ post.date | date: '%d/%m/%Y' }}</span>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 200 }}</p>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</main>

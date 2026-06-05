@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "dateModified": "{{ page.date | date: '%Y-%m-%d' }}",
+  "author": {
+    "@type": "Organization",
+    "name": {{ site.author | jsonify }}
+  },
+  "image": "https://anti-detect.github.io/real-android-hardware-cloud-phone-multilogin.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }}
+  },
+  "mainEntityOfPage": "{{ page.canonical | default: page.url | absolute_url }}",
+  "description": {{ page.description | default: page.excerpt | strip_html | truncate: 160 | jsonify }}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://anti-detect.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://anti-detect.github.io/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ page.title | jsonify }},
+      "item": "{{ page.canonical | default: page.url | absolute_url }}"
+    }
+  ]
+}
+</script>
+<article class="blog-post">
+  <h1>{{ page.title }}</h1>
+  <p class="blog-date">{{ page.date | date: '%d %B %Y' }} · {{ site.author }}</p>
+  <div class="blog-content">
+    {{ content }}
+  </div>
+  {% include related-articles-rail.html %}
+  {% include next-prev-article.html %}
+</article>

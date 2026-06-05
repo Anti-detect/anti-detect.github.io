@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://anti-detect.github.io/sitemap.xml
+Host: anti-detect.github.io

@@ -1,0 +1,23 @@
+{% assign order = site.data.guides.order %}
+{% assign prev = nil %}
+{% assign next = nil %}
+{% for u in order %}
+  {% if u == page.url %}
+    {% if forloop.index0 > 0 %}
+      {% assign prev_url = order[forloop.index0 | minus: 1] %}
+      {% assign prev = site.html_pages | where: "url", prev_url | first %}
+    {% endif %}
+    {% unless forloop.last %}
+      {% assign next_url = order[forloop.index0 | plus: 1] %}
+      {% assign next = site.html_pages | where: "url", next_url | first %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+<nav class="next-prev-article" aria-label="Guide navigation">
+  {% if prev %}
+    <a class="prev-article" href="{{ prev.url }}">&larr; Previous: {{ prev.title }}</a>
+  {% endif %}
+  {% if next %}
+    <a class="next-article" href="{{ next.url }}">Next: {{ next.title }} &rarr;</a>
+  {% endif %}
+</nav>

@@ -1,0 +1,16 @@
+title: Multilogin Discount Codes 2026
+description: Verified Multilogin affiliate discounts for Antidetect Browser and Cloud Phone. Use SAAS50 and MIN50 to get 50% off.
+baseurl: ""
+url: "https://anti-detect.github.io"
+author: Anti-Detect Team
+email: support@anti-detect.github.io
+default_lang: en
+language: en
+timezone: UTC
+site_og_image: /real-android-hardware-cloud-phone-multilogin.jpg
+
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-feed

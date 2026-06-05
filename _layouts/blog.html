@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog
+---
+<main class="blog-index">
+  <h1>Blog</h1>
+  <ul class="blog-list">
+    {% for post in site.posts %}
+      {% if post.categories contains 'blog' %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="blog-date">{{ post.date | date: '%d/%m/%Y' }}</span>
+        <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}">&laquo; Previous</a>
+    {% endif %}
+    <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}">Next &raquo;</a>
+    {% endif %}
+  </div>
+</main>
