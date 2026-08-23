@@ -4,7 +4,6 @@ lang: en
 title: Affiliate Disclosure
 description: Disclosure for affiliate links on anti-detect.github.io. We may earn commission from Multilogin purchases via SAAS50 and MIN50 links.
 canonical: https://anti-detect.github.io/affiliate-disclosure/
-keywords: affiliate disclosure, multilogin affiliate, anti-detect.github.io disclosure
 og_title: Affiliate Disclosure — Multilogin Deals
 permalink: /affiliate-disclosure/
 ---

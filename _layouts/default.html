@@ -13,11 +13,6 @@
     {% endif %}
     
     {%- comment -%} SEO Meta Tags {%- endcomment -%}
-    {% if page.keywords %}
-      <meta name="keywords" content="{{ page.keywords }}">
-    {% else %}
-      <meta name="keywords" content="anti-detect browser, multilogin, fingerprint protection, privacy, automation, account management, ADB, 2026">
-    {% endif %}
     <meta name="author" content="{{ site.author | default: 'Anti-Detect Team' }}">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="color-scheme" content="light dark">
@@ -58,6 +53,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/rss.xml' | relative_url }}">
 
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/premium.css' | relative_url }}">
 
     {%- comment -%} Structured data: Organization + WebSite {%- endcomment -%}
     <script type="application/ld+json">
@@ -146,9 +142,64 @@
       </p>
       {% endunless %}
       {{ content }}
+      {% include author-bio.html %}
     </main>
     {% include footer-en.html %}
 
     <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+    <script>
+      // Dynamic Table of Contents for 2026 SEO UX
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html') return;
+        
+        var mainContent = document.querySelector('.site-main');
+        var headers = mainContent.querySelectorAll('h2');
+        if (headers.length < 2) return;
+        
+        var tocWrapper = document.createElement('div');
+        tocWrapper.className = 'toc-container glass-card';
+        tocWrapper.style.padding = '1.5rem';
+        tocWrapper.style.marginBottom = '2rem';
+        tocWrapper.style.marginTop = '1rem';
+        
+        var tocTitle = document.createElement('h3');
+        tocTitle.textContent = 'Table of Contents';
+        tocTitle.style.marginTop = '0';
+        tocTitle.style.color = '#0b74da';
+        tocWrapper.appendChild(tocTitle);
+        
+        var tocList = document.createElement('ul');
+        tocList.style.listStyle = 'none';
+        tocList.style.paddingLeft = '0';
+        
+        headers.forEach(function(header, index) {
+          if (!header.id) {
+            header.id = 'heading-' + index;
+          }
+          var li = document.createElement('li');
+          li.style.marginBottom = '0.5rem';
+          var a = document.createElement('a');
+          a.href = '#' + header.id;
+          a.textContent = header.textContent;
+          a.style.textDecoration = 'none';
+          a.style.fontWeight = '500';
+          a.style.color = '#1e293b';
+          a.style.transition = 'color 0.2s';
+          a.onmouseover = function() { this.style.color = '#0b74da'; };
+          a.onmouseout = function() { this.style.color = '#1e293b'; };
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+        
+        tocWrapper.appendChild(tocList);
+        
+        var firstSection = mainContent.querySelector('section');
+        if (firstSection) {
+          mainContent.insertBefore(tocWrapper, firstSection);
+        } else {
+          mainContent.insertBefore(tocWrapper, mainContent.firstChild);
+        }
+      });
+    </script>
   </body>
 </html>

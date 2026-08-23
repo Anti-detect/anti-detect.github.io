@@ -6,7 +6,6 @@ date: 2026-03-21
 lang: en
 description: "Long-form guide to Multilogin for affiliate teams: Browser vs Cloud Phone, SAAS50/MIN50, and workflow SOP."
 canonical: https://anti-detect.github.io/blog/2026/03/21/sample-article-1/
-keywords: multilogin affiliate marketing, SAAS50, antidetect browser workflow
 excerpt: "Learn how to leverage Multilogin for affiliate campaigns with isolated profiles, stable sessions, and verified discount codes."
 ---
 

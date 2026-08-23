@@ -4,7 +4,6 @@ lang: en
 title: Privacy Policy
 description: Privacy policy for anti-detect.github.io — cookies, analytics, and affiliate link practices.
 canonical: https://anti-detect.github.io/privacy-policy/
-keywords: privacy policy, multilogin deals site privacy
 permalink: /privacy-policy/
 ---
 
