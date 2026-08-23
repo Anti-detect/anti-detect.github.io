@@ -136,9 +136,9 @@
     <main id="content" class="site-main container">
       {% unless page.url == '/' %}
       <p class="meta page-eeat">
-        By {{ site.author }} &middot;
-        <a href="/affiliate-disclosure/">Affiliate disclosure</a> &middot;
-        <a href="/privacy-policy/">Privacy</a>
+        <span class="tap-target">By {{ site.author }}</span> &middot;
+        <a href="/affiliate-disclosure/" class="tap-target">Affiliate disclosure</a> &middot;
+        <a href="/privacy-policy/" class="tap-target">Privacy</a>
       </p>
       {% endunless %}
       {{ content }}

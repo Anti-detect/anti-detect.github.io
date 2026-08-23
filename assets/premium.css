@@ -174,3 +174,48 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
+
+/* =======================================================
+   LIGHTHOUSE 100/100 FIXES (Accessibility, SEO, Best Practices)
+   ======================================================= */
+
+/* 1. Best Practices: Global Image & Video Responsiveness */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2. SEO: Tap Target Sizing for Mobile (Footer & Meta links) */
+.tap-target {
+  display: inline-block;
+  padding: 12px;
+  min-width: 48px;
+  min-height: 48px;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+/* 3. Accessibility: Color Contrast Adjustments */
+/* Override potentially low-contrast blues on white to darker shades */
+a {
+  color: #084d94; /* Darker blue for >= 4.5:1 contrast on white */
+}
+
+a:hover, a:focus {
+  color: #042f5e;
+}
+
+/* The hero gradient needs its own text override since it's dark text on dark gradient? 
+   Wait, the primary gradient is blue/cyan, so text-dark (#0f172a) has good contrast there.
+   Let's just ensure .text-dark is extremely dark. */
+:root {
+  --text-dark: #000000;
+}
+
+.meta, .page-eeat {
+  color: #475569; /* Darkened from #64748b */
+}
+
+/* Ensure header nav links have large enough tap targets */
+.nav a { padding: 12px; min-height: 48px; display: inline-block; box-sizing: border-box; align-content: center; }
