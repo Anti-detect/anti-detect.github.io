@@ -219,3 +219,10 @@ a:hover, a:focus {
 
 /* Ensure header nav links have large enough tap targets */
 .nav a { padding: 12px; min-height: 48px; display: inline-block; box-sizing: border-box; align-content: center; }
+
+/* === WOW FACTOR UPGRADES === */
+body { background-color: #e0f2fe; background-image: radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.4) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(333, 100%, 76%, 0.4) 0px, transparent 50%), radial-gradient(at 80% 100%, hsla(22, 100%, 77%, 0.4) 0px, transparent 50%), radial-gradient(at 0% 0%, hsla(243, 100%, 76%, 0.4) 0px, transparent 50%); background-attachment: fixed; }
+.site-header { background: rgba(255, 255, 255, 0.65) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important; position: sticky; top: 0; z-index: 1000; }
+.glass-card { background: rgba(255, 255, 255, 0.6) !important; border: 1px solid rgba(255, 255, 255, 0.8) !important; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important; }
+.btn-modern { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.btn-modern:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
